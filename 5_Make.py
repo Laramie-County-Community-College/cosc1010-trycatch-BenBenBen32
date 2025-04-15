@@ -24,7 +24,35 @@ the output of the program is:
 Exception: Negative step count entered.
 '''
 
-# Define your method here
+# Function that converts steps to miles and raises a value error if the input number is less the zero. 
+
+def steps_to_miles(steps):
+       
+    if steps < 0:
+        raise ValueError("Exception: Negative step count entered.")
+   
+    steps_to_miles = steps / 2000
+    
+    print(f'\n Wow you walked {steps_to_miles:.2f} miles!')
+    
 
 if __name__ == '__main__':
-    # Type your code here.
+
+# Opening message. 
+    print("\nThis Program will change the amount of steps that you have taken in a day and will change them into miles!\n")
+
+# While loop to keep the program going.    
+    while True:
+        
+        try:
+            # Input for the user.
+            steps = int(input("\nEnter the amount of steps you've taken in a day! "))
+        
+            miles = steps_to_miles(steps)
+
+            # Ends the loop. 
+            break
+
+        except ValueError:
+            
+            print("\nHow the heck did you walk negative steps! Try again!") 
